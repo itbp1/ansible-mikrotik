@@ -7,7 +7,7 @@
 # pty=False
 #
 - name: Mikrotik Backup Device Configuration
-  hosts: 
+  hosts: Gateways
   vars:
     ftpserver_var: speedtest.tele2.net
     ftpuser_var: anonymous
