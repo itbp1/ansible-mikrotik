@@ -8,11 +8,7 @@
 #
 - name: Mikrotik Backup Device Configuration
   hosts: mikrotik
-  vars:
-    ftpserver_var: speedtest.tele2.net
-    ftpuser_var: anonymous
-    ftppass_var: 
-
+  
   connection: paramiko
   gather_facts: no
   tasks:
