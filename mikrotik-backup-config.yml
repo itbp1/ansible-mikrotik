@@ -14,7 +14,6 @@
     ftppass_var: 
 
   connection: paramiko
-  user: admin
   gather_facts: no
   tasks:
    - name: Performing backup of Mikrotik to local storage
