@@ -8,9 +8,8 @@
 #
 - name: Mikrotik Backup Device Configuration
   hosts: mikrotik
-
-
-  gather_facts: False
+  connection: paramiko
+  gather_facts: no
   tasks:
    - name: Performing backup of Mikrotik to local storage
      raw: /system backup save name {{inventory_hostname}}
