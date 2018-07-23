@@ -7,12 +7,14 @@
 # pty=False
 #
 - name: Mikrotik Backup Device Configuration
+    hosts: gate.mostek.su
     vars:
     ftpserver_var: speedtest.tele2.net
     ftpuser_var: anonymous
     ftppass_var: 
 
   connection: paramiko
+  user: admin
   gather_facts: no
   tasks:
    - name: Performing backup of Mikrotik to local storage
