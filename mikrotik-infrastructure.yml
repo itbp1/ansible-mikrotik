@@ -42,7 +42,7 @@
      tags: dhcp
 
    - name: Adding ip address
-     raw: /ip address add address={{lan_address_var}} comment=LAN interface=ether2-lan network={{lan_address_network_var}}
+     raw: /ip address add address={{lan_address_var}}/24 comment=LAN interface=ether2-lan network={{lan_address_network_var}}
      tags: lanadress
      
    - name: Adding dhcp network
