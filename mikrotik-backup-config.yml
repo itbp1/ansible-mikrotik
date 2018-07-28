@@ -18,7 +18,7 @@
      raw: /export file={{inventory_hostname}}
 
    - name: FTP backup file
-     raw: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.backup user={{ftpuser_var}} mode=ftp dst-path=/upload/{{inventory_hostname}}.backup upload=yes
+     raw: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.backup user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/upload/{{inventory_hostname}}.backup upload=yes
 
    - name: FTP export config
-     raw: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.rsc user={{ftpuser_var}} mode=ftp dst-path=/upload/{{inventory_hostname}}.rsc upload=yes
+     raw: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.rsc user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/upload/{{inventory_hostname}}.rsc upload=yes
