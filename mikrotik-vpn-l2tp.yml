@@ -18,7 +18,7 @@
      raw: /ppp profile add local-address=192.168.33.1 name=l2tp_profile remote-address=l2tp_pool
 
    - name: Add l2tp server
-     raw: /interface l2tp-server server set default-profile=l2tp_profile enabled=yes ipsec-secret={{ipsecpsk_var}} use-ipsec=yes
+     raw: /interface l2tp-server server set default-profile=l2tp_profile enabled=yes ipsec-secret={{ipsecpsk_var}} use-ipsec=yes authentication=mschap2
    
    - name: Add firewall rules ipsec-esp
      raw: /ip firewall filter add action=accept chain=input protocol=ipsec-esp comment="L2TP Server" disabled=no place-before=1
