@@ -13,7 +13,7 @@
   tasks:
    - name: Add user
      raw: /user 
-     raw: add name={{username_var}} password={{password_var}} group=full disabled=no comment="ITBP admin"
-     raw: set name={{username_var}} password={{password_var}} numbers={{numbers_var}} group=full disabled=no comment="ITBP admin"
-     raw: remove {{remname_var}}
+     add name={{username_var}} password={{password_var}} group=full disabled=no comment="ITBP admin"
+     set name={{username_var}} password={{password_var}} numbers={{numbers_var}} group=full disabled=no comment="ITBP admin"
+     remove {{remname_var}}
 
