@@ -1,0 +1,51 @@
+---
+# An Ansible Playbook to backup the Mikrotik device's configuration to both script and backup file
+# Version 1 - 07/01/2017
+#
+# ansible.cfg
+# [paramiko_connection]
+# pty=False
+#
+- name: Mikrotik Change Device Password
+  hosts: mikrotik
+  connection: paramiko
+  gather_facts: no
+  tasks:
+   - name: Add user
+     raw: /user add name={{username_var}} password={{password_var}} group=full disabled=no comment="ITBP admin"
+     tags: adduser
+
+   - name: Changing password
+     raw: /user set name={{username_var}} password={{password_var}} numbers={{numbers_var}} group=full disabled=no comment="ITBP admin"
+     tags: adduser
+
+   - name: User delete
+     raw: /user remove {{remname_var}}
+     tags: adduser
+
+   - name: Adding ITBP Address List
+     raw: /ip firewall address-list add list=ITBP address={{address_var}}
+     tags: iptables
+
+   - name: Adding INPUT rule for access from ITBP adress list
+     raw: /ip firewall filter add chain=input action=accept src-address-list=ITBP place-before=1 comment="Access from ITBP"
+     tags: iptables
+
+   - name: Adding interfaces wan
+     raw: /interface ethernet set [ find default-name=ether1 ] name=ether1-wan
+
+   - name: Adding interfaces lan
+     raw: /interface ethernet set [ find default-name=ether2 ] name=ether2-lan
+
+   - name: Adding IP pool
+     raw: /ip pool add name=dhcp_pool0 ranges={{dhcprange_var}}
+     tags: dhcp
+
+   - name: Adding dhcp server
+     raw: /ip dhcp-server add address-pool=dhcp_pool0 disabled=no interface=ether2-lan lease-time=1d name=dhcp1
+     tags: dhcp
+
+   - name: Adding ip address
+     raw: /ip address add address={{lan_address_var}} comment=LAN interface=ether2-lan network={{lan_address_network_var}}
+     tags: lanadress
+
