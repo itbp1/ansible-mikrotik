@@ -46,7 +46,7 @@
      tags: lanadress
 
    - name: Adding dhcp server network
-     raw: /ip dhcp-server network add address={{lan_address_network_var}} dns-server={{dns_server_var}} gateway={{lan_adddress_var}}
+     raw: /ip dhcp-server network add address={{lan_address_network_var}} dns-server={{dns_server_var}} gateway={{lan_address_var}}
      tags: dhcp
 
    - name: Adding WAN ip address
