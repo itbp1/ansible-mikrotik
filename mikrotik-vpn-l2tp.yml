@@ -21,6 +21,6 @@
      raw: /interface l2tp-server server set default-profile=l2tp_profile enabled=yes ipsec-secret={{ipsecpsk_var}} use-ipsec=yes
    
    - name: Add firewall rules ipsec-esp
-     raw: /ip firewall filter add action=accept chain=input protocol=ipsec-esp comment="L2TP Server" disabled=no
+     raw: /ip firewall filter add action=accept chain=input protocol=ipsec-esp comment="L2TP Server" disabled=no place-before=1
    - name: Add firewall rules udp
-     raw: /ip firewall filter add action=accept chain=input dst-port=1701,500,4500 protocol=udp disabled=no
+     raw: /ip firewall filter add action=accept chain=input dst-port=1701,500,4500 protocol=udp disabled=no place-before=1
