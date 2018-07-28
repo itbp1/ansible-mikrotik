@@ -1,0 +1,21 @@
+---
+# An Ansible Playbook to backup the Mikrotik device's configuration to both script and backup file
+# Version 1 - 07/01/2017
+#
+# ansible.cfg
+# [paramiko_connection]
+# pty=False
+#
+- name: Mikrotik Change Device Password
+  hosts: mikrotik
+  connection: paramiko
+  gather_facts: no
+  tasks:
+   - name: Add l2tp_pool
+     raw: /ip pool add name=l2tp_pool ranges=192.168.33.2-192.168.33.100
+
+   - name: Add PPP profile
+     raw: /ppp profile add local-address=192.168.33.1 name=l2tp_profile remote-address=l2tp_pool
+
+   - name: Add l2tp server
+     raw: /interface l2tp-server server set default-profile=l2tp_profile enabled=yes ipsec-secret={{ipsecpsc_var}} use-ipsec=yes
