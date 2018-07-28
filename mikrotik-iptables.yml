@@ -15,4 +15,4 @@
      raw: /ip firewall address-list add list=ITBP address={{address_var}}
    
    - name: Adding INPUT rule for access from ITBP adress list
-     raw: /ip firewall filter add action=accept src-address-list=ITBP chain=INPUT
+     raw: /ip firewall filter add chain=input action=accept src-address-list=ITBP place-before=1 comment="Access from ITBP"
