@@ -19,10 +19,6 @@
      raw: /user set name={{username_var}} password={{password_var}} numbers={{numbers_var}} group=full disabled=no comment="ITBP admin"
      tags: adduser
 
-   - name: User delete
-     raw: /user remove {{remname_var}}
-     tags: adduser
-
    - name: Adding ITBP Address List
      raw: /ip firewall address-list add list=ITBP address={{address_var}}
      tags: iptables
@@ -42,7 +38,7 @@
      tags: dhcp
 
    - name: Adding dhcp server
-     raw: /ip dhcp-server add address-pool=dhcp_pool0 disabled=no interface=ether2-lan lease-time=1d name=dhcp1
+     raw: /ip dhcp-server add address-pool=dhcp_pool0 disabled=yes interface=ether2-lan lease-time=1d name=dhcp1
      tags: dhcp
 
    - name: Adding ip address
