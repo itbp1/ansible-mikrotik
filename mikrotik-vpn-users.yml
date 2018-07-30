@@ -7,7 +7,6 @@
 # pty=False
 #
 - name: Mikrotik ADD VPN Users
-  hosts: vpn
   connection: paramiko
   gather_facts: no
   tasks:
