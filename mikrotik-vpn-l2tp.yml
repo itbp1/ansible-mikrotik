@@ -7,7 +7,6 @@
 # pty=False
 #
 - name: Mikrotik Add L2TP Server
-  hosts: vpn
   connection: paramiko
   gather_facts: no
   tasks:
