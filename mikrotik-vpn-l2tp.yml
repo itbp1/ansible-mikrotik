@@ -10,8 +10,6 @@
   hosts: mikrotik
   connection: paramiko
   gather_facts: no
-  vars_prompt:
-   vpn_range_var: "Введите пул адресов l2tp"
   tasks:
    - name: Add l2tp_pool
      raw: /ip pool add name=l2tp_pool ranges={{vpn_range_var}}
