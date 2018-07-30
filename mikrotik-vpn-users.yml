@@ -13,60 +13,60 @@
   tasks:
    - name: Add user1
      raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-     tags: 1
+     tags: adduser1
 
    - name: Add user1
      raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-     tags: 2
+     tags: adduser2
 
    - name: Add user2
      raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
-     tags: 2
+     tags: adduser2
 
    - name: Add user1
      raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-     tags: 3
+     tags: adduser3
 
    - name: Add user2
      raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
-     tags: 3
+     tags: adduser3
 
    - name: Add user3
      raw: /ppp secret add name={{vpn_user3_var}} password={{vpn_pass3_var}} profile=l2tp_profile service=l2tp
-     tags: 3
+     tags: adduser3
 
    - name: Add user1
      raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-     tags: 4
+     tags: adduser4
 
    - name: Add user2
      raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
-     tags: 4
+     tags: adduser4
 
    - name: Add user3
      raw: /ppp secret add name={{vpn_user3_var}} password={{vpn_pass3_var}} profile=l2tp_profile service=l2tp
-     tags: 4
+     tags: adduser4
 
    - name: Add user4
      raw: /ppp secret add name={{vpn_user4_var}} password={{vpn_pass4_var}} profile=l2tp_profile service=l2tp
-     tags: 4
+     tags: adduser4
 
    - name: Add user1
      raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-     tags: 5
+     tags: adduser5
 
    - name: Add user2
      raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
-     tags: 5
+     tags: adduser5
 
    - name: Add user3
      raw: /ppp secret add name={{vpn_user3_var}} password={{vpn_pass3_var}} profile=l2tp_profile service=l2tp
-     tags: 5
+     tags: adduser5
 
    - name: Add user4
      raw: /ppp secret add name={{vpn_user4_var}} password={{vpn_pass4_var}} profile=l2tp_profile service=l2tp
-     tags: 5
+     tags: adduser5
 
    - name: Add user5
      raw: /ppp secret add name={{vpn_user5_var}} password={{vpn_pass5_var}} profile=l2tp_profile service=l2tp
-     tags: 5
+     tags: adduser5
