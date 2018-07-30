@@ -11,62 +11,62 @@
   connection: paramiko
   gather_facts: no
   tasks:
- - name: Add user1
-    raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-    tags: 1
-
- - name: Add user1
-    raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-    tags: 2
-
- - name: Add user2
-    raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
-    tags: 2
-
- - name: Add user1
-    raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-    tags: 3
-
- - name: Add user2
-    raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
-    tags: 3
-
- - name: Add user3
-    raw: /ppp secret add name={{vpn_user3_var}} password={{vpn_pass3_var}} profile=l2tp_profile service=l2tp
-    tags: 3
-
- - name: Add user1
-    raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-    tags: 4
-
- - name: Add user2
-    raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
-    tags: 4
-
- - name: Add user3
-    raw: /ppp secret add name={{vpn_user3_var}} password={{vpn_pass3_var}} profile=l2tp_profile service=l2tp
-    tags: 4
-
- - name: Add user4
-    raw: /ppp secret add name={{vpn_user4_var}} password={{vpn_pass4_var}} profile=l2tp_profile service=l2tp
-    tags: 4
+   - name: Add user1
+     raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
+     tags: 1
 
    - name: Add user1
-    raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
-    tags: 5
+     raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
+     tags: 2
 
- - name: Add user2
-    raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
-    tags: 5
+   - name: Add user2
+     raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
+     tags: 2
 
- - name: Add user3
-    raw: /ppp secret add name={{vpn_user3_var}} password={{vpn_pass3_var}} profile=l2tp_profile service=l2tp
-    tags: 5
+   - name: Add user1
+     raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
+     tags: 3
 
- - name: Add user4
-    raw: /ppp secret add name={{vpn_user4_var}} password={{vpn_pass4_var}} profile=l2tp_profile service=l2tp
-    tags: 5
+   - name: Add user2
+     raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
+     tags: 3
 
- - name: Add user5
-    raw: /ppp secret add name={{vpn_user5_var}} password={{vpn_pass5_var}} profile=l2tp_profile service=l2tp
-    tags: 5
+   - name: Add user3
+     raw: /ppp secret add name={{vpn_user3_var}} password={{vpn_pass3_var}} profile=l2tp_profile service=l2tp
+     tags: 3
+
+   - name: Add user1
+     raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
+     tags: 4
+
+   - name: Add user2
+     raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
+     tags: 4
+
+   - name: Add user3
+     raw: /ppp secret add name={{vpn_user3_var}} password={{vpn_pass3_var}} profile=l2tp_profile service=l2tp
+     tags: 4
+
+   - name: Add user4
+     raw: /ppp secret add name={{vpn_user4_var}} password={{vpn_pass4_var}} profile=l2tp_profile service=l2tp
+     tags: 4
+
+   - name: Add user1
+     raw: /ppp secret add name={{vpn_user1_var}} password={{vpn_pass1_var}} profile=l2tp_profile service=l2tp
+     tags: 5
+
+   - name: Add user2
+     raw: /ppp secret add name={{vpn_user2_var}} password={{vpn_pass2_var}} profile=l2tp_profile service=l2tp
+     tags: 5
+
+   - name: Add user3
+     raw: /ppp secret add name={{vpn_user3_var}} password={{vpn_pass3_var}} profile=l2tp_profile service=l2tp
+     tags: 5
+
+   - name: Add user4
+     raw: /ppp secret add name={{vpn_user4_var}} password={{vpn_pass4_var}} profile=l2tp_profile service=l2tp
+     tags: 5
+
+   - name: Add user5
+     raw: /ppp secret add name={{vpn_user5_var}} password={{vpn_pass5_var}} profile=l2tp_profile service=l2tp
+     tags: 5
