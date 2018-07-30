@@ -12,10 +12,10 @@
   gather_facts: no
   tasks:
    - name: Add l2tp_pool
-     raw: /ip pool add name=l2tp_pool ranges=192.168.33.2-192.168.33.100
+     raw: /ip pool add name=l2tp_pool ranges={{vpn_range_var}}
 
    - name: Add PPP profile
-     raw: /ppp profile add local-address=192.168.33.1 name=l2tp_profile remote-address=l2tp_pool
+     raw: /ppp profile add local-address={{vpn_address_var}} name=l2tp_profile remote-address=l2tp_pool
 
    - name: Add l2tp server
      raw: /interface l2tp-server server set default-profile=l2tp_profile enabled=yes ipsec-secret={{ipsecpsk_var}} use-ipsec=yes authentication=mschap2
