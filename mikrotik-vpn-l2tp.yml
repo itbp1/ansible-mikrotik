@@ -6,8 +6,8 @@
 # [paramiko_connection]
 # pty=False
 #
-- name: Mikrotik Change Device Password
-  hosts: mikrotik
+- name: Mikrotik Add L2TP Server
+  hosts: vpn
   connection: paramiko
   gather_facts: no
   tasks:
