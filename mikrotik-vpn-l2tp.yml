@@ -7,7 +7,7 @@
 # pty=False
 #
 - name: Mikrotik Add L2TP Server
-  hosts: {{hosts_var}}
+  hosts: "{{hosts_var}}"
   connection: paramiko
   gather_facts: no
   tasks:
