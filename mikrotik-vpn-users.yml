@@ -7,7 +7,7 @@
 # pty=False
 #
 - name: Mikrotik ADD VPN Users
-  hosts: mikrotik
+  hosts: "{{hosts_var}}"
   connection: paramiko
   gather_facts: no
   tasks:
