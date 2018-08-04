@@ -1,0 +1,15 @@
+---
+# An Ansible Playbook to restore the Mikrotik device's configuration to both script and backup file
+# Version 1 - 07/01/2017
+#
+# ansible.cfg
+# [paramiko_connection]
+# pty=False
+#
+- name: Mikrotik Restore Device Configuration
+  hosts: "{{hosts_var}}"
+  connection: paramiko
+  gather_facts: no
+  tasks:
+   - name: Performing backup of Mikrotik to local storage
+     raw: /system backup load name={{inventory_hostname}} password={{ftppass_var}}
