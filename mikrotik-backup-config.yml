@@ -12,7 +12,7 @@
   gather_facts: no
   tasks:
    - name: Performing backup of Mikrotik to local storage
-     raw: /system backup save name {{inventory_hostname}}
+     raw: /system backup save name={{inventory_hostname}} password={{ftppass_var}}
 
    - name: Exporting current configuration to text
      raw: /export file={{inventory_hostname}}
