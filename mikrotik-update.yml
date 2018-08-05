@@ -1,0 +1,21 @@
+---
+# An Ansible Playbook to backup the Mikrotik device's configuration to both script and backup file
+# Version 1 - 07/01/2017
+#
+# ansible.cfg
+# [paramiko_connection]
+# pty=False
+#
+- name: Mikrotik Update Device Configuration
+  hosts: "{{hosts_var}}"
+  connection: paramiko
+  gather_facts: no
+  tasks:
+   - name: Performing update of Mikrotik to local storage
+     raw: /system package update check-for-updates
+
+   - name: FTP backup file
+     raw: /system package update download
+
+   - name: FTP export config
+     raw: /tool fetch address={{ftpserver_var}} src-path=*.npk user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/{{inventory_hostname}}.rsc upload=yes
