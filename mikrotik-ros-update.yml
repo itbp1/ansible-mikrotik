@@ -3,9 +3,8 @@
 # Version 1 - 08/01/2017
 #
 - name: Mikrotik ROS Update
-  hosts: mikrotik
-# serial: 1 # executes one host at a time
-
+  # serial: 1 # executes one host at a time
+  hosts: "{{hosts_var}}"
   connection: paramiko
   gather_facts: no
   tasks:
