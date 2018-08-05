@@ -11,6 +11,10 @@
   connection: paramiko
   gather_facts: no
   tasks:
+   - name: get resources
+     raw: /system resource print file={{inventory_hostname}}
+     tags: resources
+
    - name: Performing update of Mikrotik to local storage
      raw: /system package update check-for-updates
 
@@ -18,4 +22,5 @@
      raw: /system package update download
 
    - name: FTP export config
-     raw: /tool fetch address={{ftpserver_var}} src-path=*.npk user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/{{inventory_hostname}}.rsc upload=yes
+     raw: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.rsc user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/{{inventory_hostname}}.rsc upload=yes
+     tags: resources
