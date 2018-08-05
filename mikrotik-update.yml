@@ -13,6 +13,7 @@
   tasks:
    - name: Performing update of Mikrotik to local storage
      raw: /system package update check-for-updates
+     tags: check
 
    - name: FTP backup file
      raw: /system package update download
