@@ -6,19 +6,16 @@
 # [paramiko_connection]
 # pty=False
 #
-- name: Mikrotik Backup Device Configuration
+- name: Mikrotik Update Device Configuration
   hosts: "{{hosts_var}}"
   connection: paramiko
   gather_facts: no
   tasks:
-   - name: Performing backup of Mikrotik to local storage
-     raw: /system backup save name={{inventory_hostname}} password={{ftppass_var}}
-
-   - name: Exporting current configuration to text
-     raw: /export file={{inventory_hostname}}
+   - name: Performing update of Mikrotik to local storage
+     raw: /system package update check-for-updates
 
    - name: FTP backup file
-     raw: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.backup user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/{{inventory_hostname}}.backup upload=yes
+     raw: /system package update download
 
    - name: FTP export config
-     raw: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.rsc user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/{{inventory_hostname}}.rsc upload=yes
+     raw: /tool fetch address={{ftpserver_var}} src-path=*.npk user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/{{inventory_hostname}}.rsc upload=yes
