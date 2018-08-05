@@ -18,4 +18,4 @@
      raw: /system package update download
 
    - name: FTP export config
-     raw: /tool fetch address={{ftpserver_var}} src-path=*.npk user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/{{inventory_hostname}}.rsc upload=yes
+     raw: /tool fetch address={{ftpserver_var}} src-path=*.npk user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/ upload=yes
