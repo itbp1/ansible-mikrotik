@@ -23,9 +23,5 @@
      raw: /system package update download
 
    - name: FTP export config
-<<<<<<< HEAD
      raw: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.rsc user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/{{inventory_hostname}}.rsc upload=yes
      tags: resources
-=======
-     raw: /tool fetch address={{ftpserver_var}} src-path=*.npk user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/{{day_var}}/ upload=yes
->>>>>>> 78c78726be540b9c54c38392a4698b96cb1c2163
